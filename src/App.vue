@@ -1,33 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/news">News</router-link>|
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <v-bottom-navigation :value="activeBtn" background-color="#272727">
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="./assets/free-corona-virus-icon-3133-thumb.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Coronoya"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="./assets/coronoa.png"
+          width="100"
+        />
+
+        <v-spacer></v-spacer>
+
+        <v-btn>
+          <span>
+            <router-link to="/">Home</router-link>
+          </span>
+        </v-btn>
+        <v-btn>
+          <router-link to="/news">News</router-link>
+        </v-btn>
+        <v-btn>
+          <router-link to="/about">About</router-link>
+        </v-btn>
+      </div>
+    </v-bottom-navigation>
+
+    <v-content>
+      <router-view />
+    </v-content>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default {
+  name: "App",
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data() {
+    return {
+      activeBtn: 1
+    };
+  }
+};
+</script>
