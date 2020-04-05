@@ -1,13 +1,20 @@
 <template>
   <v-container>
-    <div v-for="news in newses" :key="news.id">
-      <div class="col-5">
+    <v-row>
+      <v-col v-for="(news, index) in newses" :key="index" cols="6" class="news_container">
         <a v-bind:href="news.url">
-          <v-img v-bind:src="news.image_url" contain min-width="400" width="400" />
-          <h2>{{news.title}}</h2>
+          <div class="image">
+            <v-img v-bind:src="news.image_url" height="300px" />
+          </div>
+
+          <div class="summery">
+            <h3>{{news.title}}</h3>
+            <p>{{news.summary}}</p>
+            <!-- <h3>{{index%2}}</h3> -->
+          </div>
         </a>
-      </div>
-    </div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -22,7 +29,7 @@ export default {
   },
   created() {
     axios
-      .get("https://nepalcorona.info/api/v1/news?limit=5")
+      .get("https://nepalcorona.info/api/v1/news")
       .then(res => {
         this.newses = res.data.data;
         console.log(this.newses);
@@ -31,3 +38,15 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.news_container {
+  min-width: 400px;
+}
+.news_container a {
+  text-decoration: none;
+}
+.image {
+  height: 350px;
+}
+</style>
