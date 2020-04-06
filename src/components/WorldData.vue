@@ -1,10 +1,10 @@
 <template>
   <v-container>
     <v-card>
-      <v-card-title>
+      <v-card-title background-color="#343a40">
         <v-text-field v-model="search" label="Search" single-line hide-details></v-text-field>
       </v-card-title>
-      <v-data-table :headers="headers" :items="worlds" :search="search"></v-data-table>
+      <v-data-table :headers="headers" :items="worlds" :search="search" dark></v-data-table>
     </v-card>
   </v-container>
 </template>
@@ -12,7 +12,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "HelloWorld",
+  name: "WorldData",
   data() {
     return {
       search: "",
@@ -36,7 +36,10 @@ export default {
   created() {
     axios
       .get("https://nepalcorona.info/api/v1/data/world")
-      .then(res => (this.worlds = res.data))
+      .then(res => {
+        this.worlds = res.data;
+        this.worlds = this.worlds.filter(world => world.country != "");
+      })
       .catch(error => console.log(error));
   }
 };

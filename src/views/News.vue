@@ -10,6 +10,10 @@
           <div class="summery">
             <h3>{{news.title}}</h3>
             <p>{{news.summary}}</p>
+            <p>
+              <b>Source:</b>
+              {{news.source}}
+            </p>
             <!-- <h3>{{index%2}}</h3> -->
           </div>
         </a>
