@@ -10,9 +10,8 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
-  name: "WorldData",
+  name: "DataTable",
   data() {
     return {
       search: "",
@@ -29,18 +28,9 @@ export default {
         { text: "New Daath", value: "newDeaths" },
         { text: "Active Cases", value: "activeCases" },
         { text: "Total Recovered", value: "totalRecovered" }
-      ],
-      worlds: []
+      ]
     };
   },
-  created() {
-    axios
-      .get("https://nepalcorona.info/api/v1/data/world")
-      .then(res => {
-        this.worlds = res.data;
-        this.worlds = this.worlds.filter(world => world.country != "");
-      })
-      .catch(error => console.log(error));
-  }
+  props: ["worlds"]
 };
 </script>

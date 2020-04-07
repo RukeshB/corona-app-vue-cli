@@ -28,6 +28,9 @@
         <router-link to="/introduction">Introduction</router-link>
       </v-btn>
       <v-btn>
+        <router-link to="/world">World Data</router-link>
+      </v-btn>
+      <v-btn>
         <router-link to="/news">News</router-link>
       </v-btn>
       <v-btn>

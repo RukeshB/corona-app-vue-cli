@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import News from '../views/News.vue';
 import Introduction from '../views/Introduction.vue';
+import WorldData from '../views/WorldData.vue';
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,11 @@ const routes = [
 		path      : '/introduction',
 		name      : 'Introduction',
 		component : Introduction
+	},
+	{
+		path      : '/world',
+		name      : 'WorldData',
+		component : WorldData
 	},
 	{
 		path      : '/news',
