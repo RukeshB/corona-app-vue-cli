@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation :value="activeBtn" background-color="#272727">
+  <v-app-bar app dark>
     <div class="d-flex align-center">
       <v-img
         alt="Vuetify Logo"
@@ -18,26 +18,20 @@
         src="../assets/coronoa.png"
         width="100"
       />
-
-      <v-spacer></v-spacer>
-
-      <v-btn>
-        <router-link to="/">Home</router-link>
-      </v-btn>
-      <v-btn>
-        <router-link to="/introduction">Introduction</router-link>
-      </v-btn>
-      <v-btn>
-        <router-link to="/world">World Data</router-link>
-      </v-btn>
-      <v-btn>
-        <router-link to="/news">News</router-link>
-      </v-btn>
-      <v-btn>
-        <router-link to="/about">About</router-link>
-      </v-btn>
     </div>
-  </v-bottom-navigation>
+
+    <v-spacer></v-spacer>
+
+    <router-link to="/" class="route">Home</router-link>
+
+    <router-link to="/introduction" class="route">Introduction</router-link>
+
+    <router-link to="/world" class="route">Statistics</router-link>
+
+    <router-link to="/news" class="route">News</router-link>
+
+    <router-link to="/about" class="route">About</router-link>
+  </v-app-bar>
 </template>
 
 <script>
@@ -51,3 +45,22 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.nav-bar {
+  max-height: 5vw;
+}
+.nav-content {
+  margin: auto;
+  width: auto;
+  padding: 0;
+}
+.route {
+  text-decoration: none;
+  padding: 1vw;
+}
+.route:hover,
+.route:active {
+  color: white;
+}
+</style>

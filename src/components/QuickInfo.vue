@@ -90,6 +90,7 @@ export default {
   background-color: #272727;
   color: white;
   border: solid white 10px;
+  min-width: 400px;
 }
 
 .content h1 {
