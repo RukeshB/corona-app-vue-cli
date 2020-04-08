@@ -1,35 +1,43 @@
 <template>
   <v-container>
+    <v-combobox
+      v-model="select"
+      :items="country"
+      label="Country"
+      outlined
+      dense
+      v-on:change="$emit('change', select)"
+    ></v-combobox>
     <v-row class="center">
-      <v-col v-bind:key="nepal.id" v-for="nepal in nepal" cols="6" class="content">
-        <h1>{{nepal.country}} Update</h1>
+      <v-col v-bind:key="single.id" v-for="single in single" cols="6" class="content">
+        <h1>{{single.country}} Update</h1>
         <v-row>
           <v-col cols="6">
-            <h3>{{nepal.totalCases}}</h3>
+            <h3>{{single.totalCases}}</h3>
             <p>Total Positive Case</p>
           </v-col>
           <v-col cols="6">
-            <h3>{{nepal.newCases}}</h3>
+            <h3>{{single.newCases}}</h3>
             <p>Today's Positive Case</p>
           </v-col>
         </v-row>
         <v-row>
           <v-col cols="6">
-            <h3>{{nepal.totalRecovered}}</h3>
+            <h3>{{single.totalRecovered}}</h3>
             <p>Recovered</p>
           </v-col>
           <v-col cols="6">
-            <h3>{{nepal.activeCases}}</h3>
+            <h3>{{single.activeCases}}</h3>
             <p>Isolation</p>
           </v-col>
         </v-row>
         <v-row>
           <v-col cols="6">
-            <h3>{{nepal.totalDeaths}}</h3>
+            <h3>{{single.totalDeaths}}</h3>
             <p>Total Deaths</p>
           </v-col>
           <v-col cols="6">
-            <h3>{{nepal.newDeaths}}</h3>
+            <h3>{{single.newDeaths}}</h3>
             <p>Today's Deaths</p>
           </v-col>
         </v-row>
@@ -67,7 +75,6 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col></v-col>
     </v-row>
   </v-container>
 </template>
@@ -76,9 +83,11 @@
 export default {
   name: "QuickInfo",
   data() {
-    return {};
+    return {
+      select: "Nepal"
+    };
   },
-  props: ["world", "nepal"]
+  props: ["world", "single", "country"]
 };
 </script>
 
@@ -89,7 +98,9 @@ export default {
 .content {
   background-color: #272727;
   color: white;
-  border: solid white 10px;
+  border: solid white 2vw;
+  border-top: none;
+  border-bottom: none;
   min-width: 400px;
 }
 

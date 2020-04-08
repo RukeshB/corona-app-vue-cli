@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app dark>
+  <v-app-bar app color="#272727ed">
     <div class="d-flex align-center">
       <v-img
         alt="Vuetify Logo"
@@ -58,6 +58,7 @@ export default {
 .route {
   text-decoration: none;
   padding: 1vw;
+  font-size: 1.5vw;
 }
 .route:hover,
 .route:active {

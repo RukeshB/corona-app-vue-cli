@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import News from '../views/News.vue';
+import AllNews from '../views/AllNews.vue';
 import Introduction from '../views/Introduction.vue';
 import WorldData from '../views/WorldData.vue';
 
@@ -25,8 +25,8 @@ const routes = [
 	},
 	{
 		path      : '/news',
-		name      : 'News',
-		component : News
+		name      : 'AllNews',
+		component : AllNews
 	},
 	{
 		path      : '/about',
