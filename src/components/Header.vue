@@ -26,11 +26,11 @@
 
     <router-link to="/introduction" class="route">Introduction</router-link>
 
+    <router-link to="/myths" class="route">Myths</router-link>
+
     <router-link to="/world" class="route">Statistics</router-link>
 
     <router-link to="/news" class="route">News</router-link>
-
-    <router-link to="/about" class="route">About</router-link>
   </v-app-bar>
 </template>
 
