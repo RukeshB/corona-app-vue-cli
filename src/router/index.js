@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import AllNews from '../views/AllNews.vue';
 import Introduction from '../views/Introduction.vue';
 import WorldData from '../views/WorldData.vue';
+import FAQ from '../views/Faq.vue';
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = [
 		// this generates a separate chunk (Myths.[hash].js) for this route
 		// which is lazy-loaded when the route is visited.
 		component : () => import(/* webpackChunkName: "Myths" */ '../views/Myths.vue')
+	},
+	{
+		path      : '/FAQ',
+		name      : 'Faq',
+		component : FAQ
 	}
 ];
 

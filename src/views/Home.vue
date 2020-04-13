@@ -2,7 +2,7 @@
   <div class="home">
     <HomeTopcontainer />
 
-    <h1>Statistics</h1>
+    <h1>Cases overview</h1>
     <QuickInfo
       v-bind:world="world"
       v-bind:single="single"

@@ -102,6 +102,7 @@ export default {
   border-top: none;
   border-bottom: none;
   min-width: 400px;
+  margin-bottom: 10px;
 }
 
 .content h1 {

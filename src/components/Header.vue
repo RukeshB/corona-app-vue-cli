@@ -31,6 +31,8 @@
     <router-link to="/world" class="route">Statistics</router-link>
 
     <router-link to="/news" class="route">News</router-link>
+
+    <router-link to="/FAQ" class="route">FAQ</router-link>
   </v-app-bar>
 </template>
 
